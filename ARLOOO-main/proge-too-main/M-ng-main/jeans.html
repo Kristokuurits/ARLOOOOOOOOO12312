@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Püksid</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>- Püksid -</h1>
+        <div class="icon-cart" onclick="toggleCart()">
+            <img src="https://cdn-icons-png.flaticon.com/512/107/107831.png" alt="Ostukorv">
+            <span id="cart-count">0</span>
+        </div>
+    </header>
+
+    <button class="back-button" onclick="window.history.back()">Tagasi</button>
+
+    <main class="listProduct">
+        <div class="product item">
+            <h2>VELVETIST TÖÖRÕIVASTIILIS PÜKSID</h2>
+            <img src="images/pyksid1.webp" alt="VELVETIST TÖÖRÕIVASTIILIS PÜKSID" class="product-image">
+            <p>Hind: 49,95€</p>
+            <label for="size1">Vali suurus:</label>
+            <select id="size1">
+                <option value="36">36</option>
+                <option value="38">38</option>
+                <option value="40">40</option>
+                <option value="42">42</option>
+                <option value="44">44</option>
+            </select>
+            <button class="addCart" onclick="addToCart('VELVETIST TÖÖRÕIVASTIILIS PÜKSID', 49.95, 'size1')">Lisa korvi</button>
+        </div>
+        
+        <div class="product item">
+            <h2>TASKUGA TÖÖRÕIVA STIILIS PÜKSID</h2>
+            <img src="images/pyksid2.webp" alt="TASKUGA TÖÖRÕIVA STIILIS PÜKSID" class="product-image">
+            <p>Hind: 45,95€</p>
+            <label for="size2">Vali suurus:</label>
+            <select id="size2">
+                <option value="36">36</option>
+                <option value="38">38</option>
+                <option value="40">40</option>
+                <option value="42">42</option>
+                <option value="44">44</option>
+            </select>
+            <button class="addCart" onclick="addToCart('TASKUGA TÖÖRÕIVA STIILIS PÜKSID', 45.95, 'size2')">Lisa korvi</button>
+        </div>
+
+        <div class="product item">
+            <h2>VELVETIST KARGOPÜKSID</h2>
+            <img src="images/pyksid3.webp" alt="VELVETIST KARGOPÜKSID" class="product-image">
+            <p>Hind: 49,95€</p>
+            <label for="size3">Vali suurus:</label>
+            <select id="size3">
+                <option value="36">36</option>
+                <option value="38">38</option>
+                <option value="40">40</option>
+                <option value="42">42</option>
+                <option value="44">44</option>
+            </select>
+            <button class="addCart" onclick="addToCart('VELVETIST KARGOPÜKSID', 49.95, 'size3')">Lisa korvi</button>
+        </div>
+
+        <div class="product item">
+            <h2>TEKSTUURSED TVILLIST CHINO-PÜKSID</h2>
+            <img src="images/pyksid4.webp" alt="TEKSTUURSED TVILLIST CHINO-PÜKSID" class="product-image">
+            <p>Hind: 49,95€</p>
+            <label for="size4">Vali suurus:</label>
+            <select id="size4">
+                <option value="36">36</option>
+                <option value="38">38</option>
+                <option value="40">40</option>
+                <option value="42">42</option>
+                <option value="44">44</option>
+            </select>
+            <button class="addCart" onclick="addToCart('TEKSTUURSED TVILLIST CHINO-PÜKSID', 49.95, 'size4')">Lisa korvi</button>
+        </div>
+
+        <div class="product item">
+            <h2>PÜKSID STRAIGHT FIT</h2>
+            <img src="images/pyksid5.webp" alt="PÜKSID STRAIGHT FIT" class="product-image">
+            <p>Hind: 65,95€</p>
+            <label for="size5">Vali suurus:</label>
+            <select id="size5">
+                <option value="36">36</option>
+                <option value="38">38</option>
+                <option value="40">40</option>
+                <option value="42">42</option>
+                <option value="44">44</option>
+            </select>
+            <button class="addCart" onclick="addToCart('PÜKSID STRAIGHT FIT', 65.95, 'size5')">Lisa korvi</button>
+        </div>
+
+        <div class="product item">
+            <h2>SEEMISNAHAST PÜKSID</h2>
+            <img src="images/pyksid6.webp" alt="SEEMISNAHAST PÜKSID" class="product-image">
+            <p>Hind: 179,00€</p>
+            <label for="size6">Vali suurus:</label>
+            <select id="size6">
+                <option value="36">36</option>
+                <option value="38">38</option>
+                <option value="40">40</option>
+                <option value="42">42</option>
+                <option value="44">44</option>
+            </select>
+            <button class="addCart" onclick="addToCart('SEEMISNAHAST PÜKSID', 179.00, 'size6')">Lisa korvi</button>
+        </div>
+
+        <div class="product item">
+            <h2>TRIIPUDEGA ÜLIKONNAPÜKSID WIDE FIT</h2>
+            <img src="images/pyksid7.webp" alt="TRIIPUDEGA ÜLIKONNAPÜKSID WIDE FIT" class="product-image">
+            <p>Hind: 65,95€</p>
+            <label for="size7">Vali suurus:</label>
+            <select id="size7">
+                <option value="36">36</option>
+                <option value="38">38</option>
+                <option value="40">40</option>
+                <option value="42">42</option>
+                <option value="44">44</option>
+            </select>
+            <button class="addCart" onclick="addToCart('TRIIPUDEGA ÜLIKONNAPÜKSID WIDE FIT', 65.95, 'size7')">Lisa korvi</button>
+        </div>
+
+        <div class="product item">
+            <h2>TEKSTUURSED SISSEVÕTUVOLTIDEGA PÜKSID</h2>
+            <img src="images/pyksid8.jpg" alt="TEKSTUURSED SISSEVÕTUVOLTIDEGA PÜKSID" class="product-image">
+            <p>Hind: 39,95€</p>
+            <label for="size8">Vali suurus:</label>
+            <select id="size8">
+                <option value="36">36</option>
+                <option value="38">38</option>
+                <option value="40">40</option>
+                <option value="42">42</option>
+                <option value="44">44</option>
+            </select>
+            <button class="addCart" onclick="addToCart('TEKSTUURSED SISSEVÕTUVOLTIDEGA PÜKSID', 39.95, 'size8')">Lisa korvi</button>
+        </div>
+        
+    </main>
+
+    <aside class="cartTab" id="cart">
+        <div class="listCart" id="cart-items"></div>
+        <div class="btn">
+            <button class="close" onclick="toggleCart()">Sulge</button>
+        </div>
+    </aside>
+
+    <script>
+        let cart = [];
+        let cartCount = 0;
+        const listCartHTML = document.getElementById('cart-items');
+        const cartTab = document.getElementById('cart');
+
+        function toggleCart() {
+            cartTab.classList.toggle('open');
+        }
+
+        function addToCart(productName, price, sizeId) {
+            let positionThisProductInCart = cart.findIndex(item => item.name === productName);
+
+            if (positionThisProductInCart < 0) {
+                cart.push({ name: productName, price: price, quantity: 1 });
+            } else {
+                cart[positionThisProductInCart].quantity++;
+            }
+
+            cartCount++;
+            document.getElementById('cart-count').textContent = cartCount;
+            displayCartItems();
+            addCartToMemory();
+        }
+
+        function removeFromCart(productName) {
+            const positionThisProductInCart = cart.findIndex(item => item.name === productName);
+            if (positionThisProductInCart >= 0) {
+                cartCount -= cart[positionThisProductInCart].quantity;
+                cart.splice(positionThisProductInCart, 1);
+                document.getElementById('cart-count').textContent = cartCount;
+                displayCartItems();
+                addCartToMemory();
+            }
+        }
+
+        function displayCartItems() {
+            listCartHTML.innerHTML = '<h3>Ostukorv</h3>';
+            let total = 0;
+
+            cart.forEach(item => {
+                const itemTotalPrice = item.price * item.quantity;
+                listCartHTML.innerHTML += `
+                    <p>${item.name} - ${item.price}€ x ${item.quantity} = ${itemTotalPrice.toFixed(2)}€ 
+                    <button onclick="removeFromCart('${item.name}')">Eemalda</button></p>`;
+                total += itemTotalPrice;
+            });
+            
+            listCartHTML.innerHTML += `<p><strong>Kokku: ${total.toFixed(2)}€</strong></p>`;
+        }
+
+        function addCartToMemory() {
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+    </script>
+</body>
+</html>

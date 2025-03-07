@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification - A R L O</title>
+    
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 50px;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            width: 80%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .g-recaptcha {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .checkbox-label {
+            margin-top: 20px;
+            display: block;
+            font-size: 14px;
+        }
+
+        .checkbox-label input {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Are You a Robot?</h1>
+        <p>To proceed, please verify you are not a robot by ticking the box.</p>
+
+        <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY_HERE"></div>
+
+        <label class="checkbox-label">
+            <input type="checkbox" id="bypassCaptcha" onclick="toggleButtonState()">
+            Go directly to the shop
+        </label>
+
+        <br>
+        <button id="verifyButton" onclick="verifyCaptcha()" disabled>Proceed to Shop</button>
+    </div>
+
+    <script>
+        function toggleButtonState() {
+            const bypassCheckbox = document.getElementById("bypassCaptcha");
+            const verifyButton = document.getElementById("verifyButton");
+
+            if (bypassCheckbox.checked) {
+                verifyButton.disabled = false;
+            } else {
+                const recaptchaResponse = grecaptcha.getResponse();
+                verifyButton.disabled = recaptchaResponse.length === 0;
+            }
+        }
+
+        function verifyCaptcha() {
+            const bypassCheckbox = document.getElementById("bypassCaptcha");
+
+            if (bypassCheckbox.checked) {
+                window.location.href = "index.html";
+            } else {
+                const recaptchaResponse = grecaptcha.getResponse();
+
+                if (recaptchaResponse.length === 0) {
+                    alert("Please complete the CAPTCHA to continue.");
+                    return;
+                }
+
+                window.location.href = "index.html";
+            }
+        }
+
+        setInterval(toggleButtonState, 1000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mütsid</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>- Hiired -</h1>
+        <div class="icon-cart" id="iconCart">
+            <img src="https://cdn-icons-png.flaticon.com/512/107/107831.png" alt="Ostukorv">
+            <span id="cart-count">0</span>
+        </div>
+    </header>
+
+    <button class="back-button" onclick="window.history.back()">Tagasi</button>
+
+    <main class="listProduct">
+        <div class="product item">
+            <h2>RAZER COBRA PRO</h2>
+            <img src="images/razer-cobra-line-cobrapro_500x500.jpg" alt="razer-cobra-line-cobrapro_500x500.jpg" class="product-image">
+            <p>Hind: 15,95€</p>
+            <button class="addCart" onclick="addToCart('RAZER COBRA PRO', 15.95, 'size1')">Lisa korvi</button>
+        </div>
+
+        <div class="product item">
+            <h2>RAZER COBRA</h2>
+            <img src="images/razer-cobra-line-cobra_500x500.jpg" alt="KOOTUD MÜTS" class="product-image">
+            <p>Hind: 15,95€</p>
+            <button class="addCart" onclick="addToCart('RAZER COBRA', 15.95, 'size2')">Lisa korvi</button>
+        </div>
+
+        <div class="product item">
+            <h2>Razer Viper Mini Signature Edition</h2>
+            <img src="images/razer-viper-mini-se-white-magnesium-alloy-chassis.webp" alt="KOOTUD MÜTS" class="product-image">
+            <p>Hind: 15,95€</p>
+            <button class="addCart" onclick="addToCart('Razer Viper Mini Signature Edition', 15.95, 'size3')">Lisa korvi</button>
+        </div>
+
+        <div class="product item">
+            <h2>RAZER DEATHADDER V3 PRO</h2>
+            <img src="images/365x365-dav3pro.webp" alt="LÜHIKE KOOTUD MÜTS" class="product-image">
+            <p>Hind: 22,95€</p>
+            <button class="addCart" onclick="addToCart('RAZER DEATHADDER V3 PRO', 22.95, 'size4')">Lisa korvi</button>
+        </div>
+
+        <div class="product item">
+            <h2>Razer DeathAdder V3 HyperSpeed</h2>
+            <img src="images/razer-deathadder-v3-hyperspeed-365x365.webp" alt="LÜHIKE KOOTUD MÜTS" class="product-image">
+            <p>Hind: 22,95€</p>
+            <button class="addCart" onclick="addToCart('Razer DeathAdder V3 HyperSpeed', 22.95, 'size5')">Lisa korvi</button>
+        </div>
+
+        <div class="product item">
+            <h2>RAZER DEATHADDER V3</h2>
+            <img src="images/365x365-deathadderv3.webp" alt="LÜHIKE KOOTUD MÜTS" class="product-image">
+            <p>Hind: 22,95€</p>
+            <button class="addCart" onclick="addToCart('RAZER DEATHADDER V3', 22.95, 'size6')">Lisa korvi</button>
+        </div>
+
+        <div class="product item">
+            <h2>Razer Viper V3 Pro</h2>
+            <img src="images/viper-v3-pro-500x500.webp" alt="REBITUD VIIMISTLUSEGA KOOTUD MÜTS" class="product-image">
+            <p>Hind: 19,95€</p>
+            <button class="addCart" onclick="addToCart('Razer Viper V3 Pro', 19.95, 'size7')">Lisa korvi</button>
+        </div>
+
+        <div class="product item">
+            <h2>Razer Viper V3 HyperSpeed</h2>
+            <img src="images/365x365-deathadderv3111.webp" alt="REBITUD VIIMISTLUSEGA KOOTUD MÜTS" class="product-image">
+            <p>Hind: 19,95€</p>
+            <button class="addCart" onclick="addToCart('Razer Viper V3 HyperSpeed', 19.95, 'size8')">Lisa korvi</button>
+        </div>
+    </main>
+
+    <aside class="cartTab" id="cart">
+        <div class="listCart" id="cart-items"></div>
+        <div class="btn">
+            <button class="close" onclick="toggleCart()">Sulge</button>
+        </div>
+    </aside>
+
+    <script>
+        let cart = [];
+        let cartCount = 0;
+        const listCartHTML = document.getElementById('cart-items');
+        const iconCart = document.getElementById('iconCart');
+        const cartTab = document.getElementById('cart');
+
+        iconCart.addEventListener('click', toggleCart);
+
+        function toggleCart() {
+            cartTab.classList.toggle('open');
+        }
+
+        function addToCart(productName, price, sizeId) {
+            let positionThisProductInCart = cart.findIndex(item => item.name === productName);
+
+            if (positionThisProductInCart < 0) {
+                cart.push({ name: productName, price: price, quantity: 1 });
+            } else {
+                cart[positionThisProductInCart].quantity++;
+            }
+
+            cartCount++;
+            document.getElementById('cart-count').textContent = cartCount;
+            displayCartItems();
+            addCartToMemory();
+        }
+
+        function removeFromCart(productName) {
+            let positionThisProductInCart = cart.findIndex(item => item.name === productName);
+            if (positionThisProductInCart >= 0) {
+                cartCount -= cart[positionThisProductInCart].quantity;
+                cart.splice(positionThisProductInCart, 1);
+                document.getElementById('cart-count').textContent = cartCount;
+                displayCartItems();
+                addCartToMemory();
+            }
+        }
+
+        function displayCartItems() {
+            listCartHTML.innerHTML = '<h3>Ostukorv</h3>';
+            let total = 0;
+
+            cart.forEach(item => {
+                const itemTotalPrice = item.price * item.quantity;
+                listCartHTML.innerHTML += `
+                    <p>${item.name} - ${item.price}€ x ${item.quantity} = ${itemTotalPrice.toFixed(2)}€ 
+                    <button onclick="removeFromCart('${item.name}')">Eemalda</button></p>`;
+                total += itemTotalPrice;
+            });
+            
+            listCartHTML.innerHTML += `<p><strong>Kokku: ${total.toFixed(2)}€</strong></p>`;
+        }
+
+        function addCartToMemory() {
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+    </script>
+</body>
+</html>

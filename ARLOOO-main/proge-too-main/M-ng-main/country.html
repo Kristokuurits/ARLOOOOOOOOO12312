@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vali oma riik</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="country-popup" class="popup">
+        <div class="popup-content">
+            <h1 class="peeter">A R L O</h1>
+            <h2 class="Jaanus">Welcome to Arlo</h2>
+            <select id="country-select">
+                <option value="ee">Estonia 🇪🇪</option>
+                <option value="fi">Finland 🇫🇮</option>
+                <option value="se">Sweden 🇸🇪</option>
+                <option value="au">Australia 🇦🇺</option>
+                <option value="ru">Russia 🇷🇺</option>
+                <option value="uk">United Kingdom 🇬🇧</option>
+                <option value="be">Belgium 🇧🇪</option>
+                <option value="bg">Bulgaria 🇧🇬</option>
+                <option value="br">Brazil 🇧🇷</option>
+                <option value="ca">Canada 🇨🇦</option>
+                <option value="cn">Chinese Mainland 🇨🇳</option>
+                <option value="dk">Denmark 🇩🇰</option>
+                <option value="fr">France 🇫🇷</option>
+                <option value="de">Germany 🇩🇪</option>
+                <option value="hk">Hong Kong SAR 🇭🇰</option>
+                <option value="hu">Hungary 🇭🇺</option>
+                <option value="in">India 🇮🇳</option>
+                <option value="ie">Ireland 🇮🇪</option>
+                <option value="it">Italy 🇮🇹</option>
+                <option value="jp">Japan 🇯🇵</option>
+                <option value="kr">Korea 🇰🇷</option>
+            </select>
+        </div>       
+        <button class="yes" onclick="submitCountry()">SHOP</button> 
+    </div>
+
+    <script>
+        function submitCountry() {
+            const selectedCountry = document.getElementById('country-select').value;
+            localStorage.setItem('selectedCountry', selectedCountry);
+            window.location.href = 'landing.html';
+        }
+    </script>
+</body>
+</html>

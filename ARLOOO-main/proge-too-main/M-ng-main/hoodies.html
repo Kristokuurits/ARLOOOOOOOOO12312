@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kampsunid</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <header>
+        <h1>- Kampsunid -</h1>
+        <div class="icon-cart" onclick="toggleCart()">
+            <img src="https://cdn-icons-png.flaticon.com/512/107/107831.png" alt="Ostukorv">
+            <span id="cart-count">0</span>
+        </div>
+    </header>
+
+    <button class="back-button" onclick="window.history.back()">Tagasi</button>
+
+    <main class="listProduct">
+        <div class="product item">
+            <h2>JORDAN PUSA</h2>
+            <img src="images/11.png" alt="JORDAN PUSA" class="product-image">
+            <p>Hind: 39,99€</p>
+            <label for="size1">Vali suurus:</label>
+            <select id="size1">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+            </select>
+            <button class="addCart" onclick="addToCart('JORDAN PUSA', 39.99, 'size1')">Lisa korvi</button>
+        </div>
+        
+        <div class="product item">
+            <h2>PUSA</h2>
+            <img src="images/12.png" alt="PUSA" class="product-image">
+            <p>Hind: 36,99€</p>
+            <label for="size2">Vali suurus:</label>
+            <select id="size2">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+            </select>
+            <button class="addCart" onclick="addToCart('PUSA', 36.99, 'size2')">Lisa korvi</button>
+        </div>
+
+        <div class="product item">
+            <h2>JORDAN KAPUUTSIGA PUSA</h2>
+            <img src="images/13.png" alt="JORDANi PUSA" class="product-image">
+            <p>Hind: 49,99€</p>
+            <label for="size3">Vali suurus:</label>
+            <select id="size3">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+            </select>
+            <button class="addCart" onclick="addToCart('JORDANi PUSA', 49.99, 'size3')">Lisa korvi</button>
+        </div>
+
+        <div class="product item">
+            <h2>NIKE TECH FLEECE</h2>
+            <img src="images/14.png" alt="NIKE TECH FLEECE" class="product-image">
+            <p>Hind: 79,99€</p>
+            <label for="size4">Vali suurus:</label>
+            <select id="size4">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+            </select>
+            <button class="addCart" onclick="addToCart('NIKE TECH FLEECE', 79.99, 'size4')">Lisa korvi</button>
+        </div>
+
+        <div class="product item">
+            <h2>LÜHIKESE LUKUGA KAMPSUN VALGE</h2>
+            <img src="images/kampsun1.webp" alt="LÜHIKESE LUKUGA KAMPSUN VALGE" class="product-image">
+            <p>Hind: 69,99€</p>
+            <label for="size5">Vali suurus:</label>
+            <select id="size5">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+            </select>
+            <button class="addCart" onclick="addToCart('LÜHIKESE LUKUGA KAMPSUN VALGE', 69.99, 'size5')">Lisa korvi</button>
+        </div>
+
+        <div class="product item">
+            <h2>LÜHIKESE LUKUGA KAMPSUN HALL</h2>
+            <img src="images/kampsun2.webp" alt="LÜHIKESE LUKUGA KAMPSUN HALL" class="product-image">
+            <p>Hind: 69,99€</p>
+            <label for="size6">Vali suurus:</label>
+            <select id="size6">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+            </select>
+            <button class="addCart" onclick="addToCart('LÜHIKESE LUKUGA KAMPSUN HALL', 69.99, 'size6')">Lisa korvi</button>
+        </div>
+
+        <div class="product item">
+            <h2>LÜHIKESE LUKUGA KAMPSUN TUMESININE</h2>
+            <img src="images/kampsun3.webp" alt="LÜHIKESE LUKUGA KAMPSUN TUMESININE" class="product-image">
+            <p>Hind: 69,99€</p>
+            <label for="size7">Vali suurus:</label>
+            <select id="size7">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+            </select>
+            <button class="addCart" onclick="addToCart('LÜHIKESE LUKUGA KAMPSUN TUMESININE', 69.99, 'size7')">Lisa korvi</button>
+        </div>
+
+        <div class="product item">
+            <h2>PEHME KAMPSUN</h2>
+            <img src="images/kampsun4.webp" alt="PEHME KAMPSUN" class="product-image">
+            <p>Hind: 89,99€</p>
+            <label for="size8">Vali suurus:</label>
+            <select id="size8">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+            </select>
+            <button class="addCart" onclick="addToCart('PEHME KAMPSUN', 89.99, 'size8')">Lisa korvi</button>
+        </div>
+
+    </main>
+
+    <aside class="cartTab" id="cart">
+        <div class="listCart" id="cart-items"></div>
+        <div class="btn">
+            <button class="close" onclick="toggleCart()">Sulge</button>
+        </div>
+    </aside>
+
+    <script>
+        let cart = [];
+        let cartCount = 0;
+        const listCartHTML = document.getElementById('cart-items');
+        const cartTab = document.getElementById('cart');
+
+        function toggleCart() {
+            cartTab.classList.toggle('open');
+        }
+
+        function addToCart(productName, price, sizeId) {
+            let positionThisProductInCart = cart.findIndex(item => item.name === productName);
+
+            if (positionThisProductInCart < 0) {
+                cart.push({ name: productName, price: price, quantity: 1 });
+            } else {
+                cart[positionThisProductInCart].quantity++;
+            }
+
+            cartCount++;
+            document.getElementById('cart-count').textContent = cartCount;
+            displayCartItems();
+            addCartToMemory();
+        }
+
+        function removeFromCart(productName) {
+            let positionThisProductInCart = cart.findIndex(item => item.name === productName);
+            if (positionThisProductInCart >= 0) {
+                cartCount -= cart[positionThisProductInCart].quantity;
+                cart.splice(positionThisProductInCart, 1);
+                document.getElementById('cart-count').textContent = cartCount;
+                displayCartItems();
+                addCartToMemory();
+            }
+        }
+
+        function displayCartItems() {
+            listCartHTML.innerHTML = '<h3>Ostukorv</h3>';
+            let total = 0;
+
+            cart.forEach(item => {
+                const itemTotalPrice = item.price * item.quantity;
+                listCartHTML.innerHTML += `
+                    <p>${item.name} - ${item.price}€ x ${item.quantity} = ${itemTotalPrice.toFixed(2)}€ 
+                    <button onclick="removeFromCart('${item.name}')">Eemalda</button></p>`;
+                total += itemTotalPrice;
+            });
+            
+            listCartHTML.innerHTML += `<p><strong>Kokku: ${total.toFixed(2)}€</strong></p>`;
+        }
+
+        function addCartToMemory() {
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+    </script>
+</body>
+</html>

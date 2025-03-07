@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jalanõud</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>- Jalanõud -</h1>
+        <div class="icon-cart" onclick="toggleCart()">
+            <img src="https://cdn-icons-png.flaticon.com/512/107/107831.png" alt="Ostukorv">
+            <span id="cart-count">0</span>
+        </div>
+    </header>
+
+    <button class="back-button" onclick="window.history.back()">Tagasi</button>
+
+    <main class="listProduct">
+        <div class="product item">
+            <h2>ONE STAR PRO OX</h2>
+            <img src="images/1.png" alt="ONE STAR PRO OX" class="product-image">
+            <p>Hind: 129€</p>
+            <label for="size1">Vali suurus:</label>
+            <select id="size1">
+                <option value="35">35</option>
+                <option value="36">36</option>
+                <option value="37">37</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+                <option value="44">44</option>
+                <option value="45">45</option>
+                <option value="46">46</option>
+            </select>
+            <button class="addCart" onclick="addToCart('ONE STAR PRO OX', 129, 'size1')">Lisa korvi</button>
+        </div>
+        
+        <div class="product item">
+            <h2>ADIDAS SAMBA</h2>
+            <img src="images/2.png" alt="ADIDAS SAMBA" class="product-image">
+            <p>Hind: 99€</p>
+            <label for="size2">Vali suurus:</label>
+            <select id="size2">
+                <option value="35">35</option>
+                <option value="36">36</option>
+                <option value="37">37</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+                <option value="44">44</option>
+                <option value="45">45</option>
+                <option value="46">46</option>
+            </select>
+            <button class="addCart" onclick="addToCart('ADIDAS SAMBA', 99, 'size2')">Lisa korvi</button>
+        </div>
+
+        <div class="product item">
+            <h2>ADIDAS CAMPUS</h2>
+            <img src="images/3.png" alt="Sporty Runners" class="product-image">
+            <p>Hind: 89€</p>
+            <label for="size3">Vali suurus:</label>
+            <select id="size3">
+                <option value="35">35</option>
+                <option value="36">36</option>
+                <option value="37">37</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+                <option value="44">44</option>
+                <option value="45">45</option>
+                <option value="46">46</option>
+            </select>
+            <button class="addCart" onclick="addToCart('Sporty Runners', 89, 'size3')">Lisa korvi</button>
+        </div>
+
+        <div class="product item">
+            <h2>NIKE AIR FORCE 1</h2>
+            <img src="images/4.png" alt="NIKE AIR FORCE 1" class="product-image">
+            <p>Hind: 89€</p>
+            <label for="size3">Vali suurus:</label>
+            <select id="size3">
+                <option value="35">35</option>
+                <option value="36">36</option>
+                <option value="37">37</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+                <option value="44">44</option>
+                <option value="45">45</option>
+                <option value="46">46</option>
+            </select>
+            <button class="addCart" onclick="addToCart('NIKE AIR FORCE 1', 89, 'size3')">Lisa korvi</button>
+        </div>
+
+        <div class="product item">
+            <h2>SPORTY RUNNERS</h2>
+            <img src="images/5.png" alt="Sporty Runners" class="product-image">
+            <p>Hind: 89€</p>
+            <label for="size3">Vali suurus:</label>
+            <select id="size3">
+                <option value="35">35</option>
+                <option value="36">36</option>
+                <option value="37">37</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+                <option value="44">44</option>
+                <option value="45">45</option>
+                <option value="46">46</option>
+            </select>
+            <button class="addCart" onclick="addToCart('Sporty Runners', 89, 'size3')">Lisa korvi</button>
+        </div>
+
+        <div class="product item">
+            <h2>NIKE DUNKS PANDA</h2>
+            <img src="images/6.png" alt="NIKE DUNKS PANDA" class="product-image">
+            <p>Hind: 89€</p>
+            <label for="size3">Vali suurus:</label>
+            <select id="size3">
+                <option value="35">35</option>
+                <option value="36">36</option>
+                <option value="37">37</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+                <option value="44">44</option>
+                <option value="45">45</option>
+                <option value="46">46</option>
+            </select>
+            <button class="addCart" onclick="addToCart('NIKE DUNKS PANDA', 89, 'size3')">Lisa korvi</button>
+        </div>
+
+        <div class="product item">
+            <h2>JORDAN 4</h2>
+            <img src="images/7.png" alt="JORDAN 4" class="product-image">
+            <p>Hind: 89€</p>
+            <label for="size3">Vali suurus:</label>
+            <select id="size3">
+                <option value="35">35</option>
+                <option value="36">36</option>
+                <option value="37">37</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+                <option value="44">44</option>
+                <option value="45">45</option>
+                <option value="46">46</option>
+            </select>
+            <button class="addCart" onclick="addToCart('JORDAN 4', 89, 'size3')">Lisa korvi</button>
+        </div>
+
+        <div class="product item">
+            <h2>PUMA</h2>
+            <img src="images/8.png" alt="PUMA" class="product-image">
+            <p>Hind: 89€</p>
+            <label for="size3">Vali suurus:</label>
+            <select id="size3">
+                <option value="35">35</option>
+                <option value="36">36</option>
+                <option value="37">37</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+                <option value="44">44</option>
+                <option value="45">45</option>
+                <option value="46">46</option>
+            </select>
+            <button class="addCart" onclick="addToCart('PUMA', 89, 'size3')">Lisa korvi</button>
+        </div>
+
+    </main>
+
+    <aside class="cartTab" id="cart">
+        <div class="listCart" id="cart-items"></div>
+        <div class="btn">
+            <button class="close" onclick="toggleCart()">Sulge</button>
+        </div>
+    </aside>
+
+    <script>
+        let cart = [];
+        let cartCount = 0;
+        const listCartHTML = document.getElementById('cart-items');
+        const iconCart = document.getElementById('iconCart');
+        const cartTab = document.getElementById('cart');
+
+        iconCart.addEventListener('click', toggleCart);
+
+        function toggleCart() {
+            cartTab.classList.toggle('open');
+        }
+
+        function addToCart(productName, price, sizeId) {
+            let positionThisProductInCart = cart.findIndex(item => item.name === productName);
+
+            if (positionThisProductInCart < 0) {
+                cart.push({ name: productName, price: price, quantity: 1 });
+            } else {
+                cart[positionThisProductInCart].quantity++;
+            }
+
+            cartCount++;
+            document.getElementById('cart-count').textContent = cartCount;
+            displayCartItems();
+            addCartToMemory();
+        }
+
+        function displayCartItems() {
+            listCartHTML.innerHTML = '<h3>Ostukorv</h3>';
+            let total = 0;
+
+            cart.forEach(item => {
+                const itemTotalPrice = item.price * item.quantity;
+                listCartHTML.innerHTML += `
+                    <p>${item.name} - ${item.price}€ x ${item.quantity} = ${itemTotalPrice.toFixed(2)}€ 
+                    <button onclick="removeFromCart('${item.name}')">Eemalda</button></p>`;
+                total += itemTotalPrice;
+            });
+            
+            listCartHTML.innerHTML += `<p><strong>Kokku: ${total.toFixed(2)}€</strong></p>`;
+        }
+
+        function addCartToMemory() {
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+    </script>
+</body>
+</html>
