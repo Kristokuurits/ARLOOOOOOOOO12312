@@ -17,7 +17,7 @@ if(isset($_POST['submit'])){
             header('location:admin_page.php');
         } elseif($row['user_type'] == 'user'){
             $_SESSION['user_name'] = $row['name'];
-            header('location:user_page.php');
+            header('location:index.php');
         }
     } else {
         $error[] = 'Incorrect email or password!';
@@ -52,6 +52,8 @@ if(isset($_POST['submit'])){
             <input type="password" name="password" required placeholder="Sisesta oma parool">
             <input type="submit" name="submit" value="Logi sisse" class="form-btn">
             <p>Ei ole veel kontot? <a href="register_form.php">Registreeru nüüd</a></p>
+            
+            <a href="index.php" class="back-btn"> Tagasi</a>
         </form>
     </div>
 

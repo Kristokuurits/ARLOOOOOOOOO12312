@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="et">
 <head>
@@ -9,33 +13,21 @@
 <body>
 
     <header>
-        <a href="login.php"><button class="login-btn">Logi sisse</button></a>
+        <?php if (isset($_SESSION['user_name']) || isset($_SESSION['admin_name'])): ?>
+            <p>Tere, <?php echo $_SESSION['user_name'] ?? $_SESSION['admin_name']; ?>!</p>
+            <a href="logout.php"><button class="login-btn">Logi välja</button></a>
+        <?php else: ?>
+            <a href="login.php"><button class="login-btn">Logi sisse</button></a>
+        <?php endif; ?>
+
+        <a href="admin_page.php" class="back-btn"> Muuda</a>
+        
         <h1>- A R L O -</h1>
         <div class="icon-cart" onclick="toggleCart()">
             <img src="https://cdn-icons-png.flaticon.com/512/107/107831.png" alt="Ostukorv">
             <span id="cart-count">0</span>
         </div>
     </header>
-
-
-
-    <script>
-        function showLogin() {
-            document.getElementById("choice-container").style.display = "none";
-            document.getElementById("login-container").style.display = "block";
-        }
-
-        function showRegister() {
-            document.getElementById("choice-container").style.display = "none";
-            document.getElementById("register-container").style.display = "block";
-        }
-
-        function goBack() {
-            document.getElementById("login-container").style.display = "none";
-            document.getElementById("register-container").style.display = "none";
-            document.getElementById("choice-container").style.display = "block";
-        }
-    </script>
 
     <section class="image-buttons category-box">
         <h3>- Choose Your Category -</h3>
@@ -89,6 +81,6 @@
             button.addEventListener('click', addToCart);
         });
     </script>
+
 </body>
 </html>
-
