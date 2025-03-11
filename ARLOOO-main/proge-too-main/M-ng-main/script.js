@@ -5,6 +5,8 @@ let iconCart = document.querySelector('.icon-cart');
 let body = document.querySelector('body');
 let closeCart = document.querySelector('.close');
 
+const requiredComponents = ["Emaplaat", "Protsessor", "HDD", "SSD", "Toiteplokk", "Graafikakaart", "RAM", "Jahuti", "Korpus"];
+
 iconCart.addEventListener('click', toggleCart);
 closeCart.addEventListener('click', toggleCart);
 

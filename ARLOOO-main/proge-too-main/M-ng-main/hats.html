@@ -80,8 +80,8 @@
         <div class="listCart" id="cart-items"></div>
         <div class="btn">
             <button class="close" onclick="toggleCart()">Sulge</button>
+            <button class="checkout" onclick="checkout()">Maksmine</button>
         </div>
-    </aside>
 
     <script>
         let cart = [];
@@ -140,6 +140,10 @@
         function addCartToMemory() {
             localStorage.setItem('cart', JSON.stringify(cart));
         }
+
+        function checkout() {
+    window.location.href = 'ostukorv.html';
+}
     </script>
 </body>
 </html>

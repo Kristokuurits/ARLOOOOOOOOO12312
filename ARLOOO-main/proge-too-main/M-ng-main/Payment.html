@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maksmis leht</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 50%;
+        }
+        .title {
+            margin-bottom: 15px;
+            color: #333;
+        }
+        .inputBox {
+            margin-bottom: 10px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .flex {
+            display: flex;
+            justify-content: space-between;
+        }
+        .flex .inputBox {
+            width: 48%;
+        }
+        .submit_btn {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background-color: #28a745;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .submit_btn:hover {
+            background-color: #218838;
+        }
+    </style>
+    <script>
+        function checkout() {
+            window.location.href = 'onnestus.html';
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <form action="#" onsubmit="event.preventDefault(); checkout();">
+            <div class="row">
+                <div class="col">
+                    <h3 class="title">Maksmine</h3>
+                    <div class="inputBox">
+                        <label for="name">Nimi:</label>
+                        <input type="text" id="name" placeholder="Nimi" required>
+                    </div>
+                    <div class="inputBox">
+                        <label for="email">Email:</label>
+                        <input type="text" id="email" placeholder="Email" required>
+                    </div>
+                    <div class="inputBox">
+                        <label for="address">Aadress:</label>
+                        <input type="text" id="address" placeholder="Aadress" required>
+                    </div>
+                    <div class="inputBox">
+                        <label for="city">Linn:</label>
+                        <input type="text" id="city" placeholder="Linn" required>
+                    </div>
+                    <div class="flex">
+                        <div class="inputBox">
+                            <label for="state">Maakond:</label>
+                            <input type="text" id="state" placeholder="Maakond" required>
+                        </div>
+                        <div class="inputBox">
+                            <label for="zip">Postiindeks:</label>
+                            <input type="number" id="zip" placeholder="123 456" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <h3 class="title">Vali makseviis</h3>
+                    <div class="inputBox">
+                        <img src="images/paypal1.webp" style="width: 200px; height: 110;">
+                        <img src="images/mastercard.svg" style="width: 200px; height: 110;">
+                        <img src="images/visa.png" style="width: 200px; height: 110;">
+                    </div>
+                    <div class="inputBox">
+                        <label for="cardName">Nimi kaardil:</label>
+                        <input type="text" id="cardName" placeholder="Nimi kaardil" required>
+                    </div>
+                    <div class="inputBox">
+                        <label for="cardNum">Kaardi number:</label>
+                        <input type="text" id="cardNum" placeholder="1111-2222-3333-4444" maxlength="19" required>
+                    </div>
+                    <div class="inputBox">
+                        <label for="expMonth">Aegumise kuupäev:</label>
+                        <select id="expMonth">
+                            <option value="">Kuu</option>
+                            <option value="Jaanuar">Jaanuar</option>
+                            <option value="Veebruar">Veebruar</option>
+                            <option value="Märts">Märts</option>
+                            <option value="Aprill">Aprill</option>
+                            <option value="Mai">Mai</option>
+                            <option value="Juuni">Juuni</option>
+                            <option value="Juuli">Juuli</option>
+                            <option value="August">August</option>
+                            <option value="September">September</option>
+                            <option value="Oktoober">Oktoober</option>
+                            <option value="November">November</option>
+                            <option value="Detsember">Detsember</option>
+                        </select>
+                    </div>
+                    <div class="flex">
+                        <div class="inputBox">
+                            <label for="expYear">Aegumise aasta:</label>
+                            <select id="expYear">
+                                <option value="">Aasta</option>
+                                <option value="2023">2023</option>
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                                <option value="2026">2026</option>
+                                <option value="2027">2027</option>
+                                <option value="2028">2028</option>
+                            </select>
+                        </div>
+                        <div class="inputBox">
+                            <label for="cvv">CVV</label>
+                            <input type="number" id="cvv" placeholder="1234" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input type="submit" value="Lõpeta makse" class="submit_btn">
+        </form>
+    </div>
+</body>
+</html>

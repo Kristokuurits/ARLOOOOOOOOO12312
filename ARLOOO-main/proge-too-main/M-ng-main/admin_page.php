@@ -52,20 +52,10 @@ $result = mysqli_query($conn, $select_users);
     <?php } ?>
 </table>
 
-<a href="logout.php">Logi välja</a>
 
-<div class="container">
-    <h1>Lisa Toode</h1>
-    <form action="salvesta.php" method="post">
-        <label for="product_name">Toote nimi:</label>
-        <input type="text" id="product_name" name="product_name" placeholder="Sisesta teenuse nimi" required>
-
-        <label for="product_price">Toote hind (€):</label>
-        <input type="number" id="product_price" name="product_price" placeholder="Sisesta teenuse hind" step="0.01" min="0" required>
-
-        <button type="submit">Lisa Toode</button>
-    </form>
-</div>
+<form action="logout.php" method="get">
+    <button type="submit">Logi välja</button>
+</form>
 
 <form action="index.php" method="get">
     <button type="submit">Tagasi avalehele</button>

@@ -94,7 +94,7 @@
             const bypassCheckbox = document.getElementById("bypassCaptcha");
 
             if (bypassCheckbox.checked) {
-                window.location.href = "index.html";
+                window.location.href = "index.php";
             } else {
                 const recaptchaResponse = grecaptcha.getResponse();
 
@@ -103,7 +103,7 @@
                     return;
                 }
 
-                window.location.href = "index.html";
+                window.location.href = "index.php";
             }
         }
 
